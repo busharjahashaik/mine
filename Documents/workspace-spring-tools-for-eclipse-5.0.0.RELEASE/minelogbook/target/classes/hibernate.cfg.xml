@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- JDBC connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mineops_lite?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">bushra09</property>
+
+        <!-- SQL Dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Show SQL in console -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+       
+
+        <!-- Connection pool (optional) -->
+        <property name="hibernate.connection.pool_size">10</property>
+        <property name="hibernate.physical_naming_strategy">
+org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+</property>
+
+
+        <!-- Mapping entity classes -->
+        <mapping class="com.mining.entity.MineSite"/>
+        <mapping class="com.mining.entity.Equipment"/>
+        <mapping class="com.mining.entity.Worker"/>
+        <mapping class="com.mining.entity.ShiftLog"/>
+        <mapping class="com.mining.entity.ProductionLog"/>
+        <mapping class="com.mining.entity.EquipmentUsage"/>
+        <mapping class="com.mining.entity.SafetyIncident"/>
+
+    </session-factory>
+</hibernate-configuration>
